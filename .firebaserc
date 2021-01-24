@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "super-3ec70": {
+      "hosting": {
+        "ngAdmin": [
+          "super-3ec70"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+$height: 30px;
+
+:host {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.page-selection {
+  display: flex;
+  justify-content: center;
+}
+
+select {
+  height: $height;
+}
+
+.pages {
+  display: flex;
+}
+
+.page-entry {
+  height: $height;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #EEEDEE;
+  margin: 0 1px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 14px;
+  width: auto;
+  padding: 0 8px;
+  &.active {
+    color: white;
+    background-color: rgb(182, 182, 182);
+    cursor: default;
+  }
+  &.disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="cropper">
+  <div class="crp-item">
+    <image-cropper
+            [imageChangedEvent]="imageChangedEvent"
+            [aspectRatio]	="1/1"
+            [resizeToWidth]="200"
+            format="png"
+            (imageCropped)="imageCropped($event)"
+            (imageLoaded)="imageLoaded($event)"
+            (cropperReady)="cropperReady($event)"
+            (loadImageFailed)="loadImageFailed($event)"></image-cropper>
+  </div>
+  <div class="sh-image">
+    <img [src]="croppedImage" />
+  </div>
+</div>
+<div class="btn-group">
+    <button type="button" mat-raised-button  (click)="onCancel()" class="mat-raised-button mat-primary mat-submit mat-reset" mat-primary>Cancel</button>
+    <button  mat-raised-button type="submit" class="mat-raised-button mat-primary mat-submit" (click)="onCrop()"style="margin-left: 50px;">Crop</button>
+</div>
+

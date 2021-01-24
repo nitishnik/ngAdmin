@@ -1,0 +1,41 @@
+<div>
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div class="form-wrap">
+      <button type="submit" mat-flat-button color="primary">Submit</button>
+      <button type="button" mat-flat-button color="warn" (click)="addItem()">Add</button>
+    </div>
+    <div class="form-wrap">
+      <mat-form-field #tt appearance="outline">
+        <input matInput formGroupName="name" placeholder="Enter name">
+      </mat-form-field>
+    </div>
+    <div class="form-wrap">
+        <input type="file"  formGroupName="image" placeholder="Enter name">
+    </div>
+    <p>second: {{tt._control.ngControl?.control?.value}}</p>
+    <p>second: {{dynamicForm.get('name').value}}</p>
+    <ng-container formArrayName="options" *ngFor="let item of dynamicForm.get('options')['controls']; let i = index;">
+      <div [formGroupName]="i">
+          <div class="form-box">
+              <div class="form-wrap">
+                <mat-form-field appearance="outline">
+                  <input matInput formControlName="option" placeholder="option">
+                </mat-form-field>
+              </div>
+              <div>
+                <button *ngIf="i>0" type="button" mat-flat-button color="warn" (click)="removeItem(i)">Remove</button>
+              </div>
+          </div>
+      </div>
+    </ng-container>
+    
+  </form>
+
+  <div>
+    <input  type="file" (change)="fileSelectionEvent($event)"/>
+
+    <!-- <input type="file" accept="video/mp4,video/x-m4v,video/webm,image/jpeg,image/jpg,/image/png"
+        id="event-video" (change)="fileSelectionEvent($event)" style="display: none;"
+        id="upload_img" /> -->
+  </div>
+</div>

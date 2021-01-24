@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 400px;
+    height: 20px;
+}
+
+.form-wrap{
+    margin: 15px;
+}
+
+.form-box{
+    // border: 1px solid blue;
+    display: flex;
+    mat-form-field{
+        width: 350px;
+    }
+}
